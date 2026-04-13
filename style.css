@@ -334,6 +334,71 @@ h1 {
 .step h4 { font-size: 22px; margin-bottom: 10px; }
 .step p { color: var(--text-muted); }
 
+/* Mockup Frame */
+.mockup-frame {
+    background: #0f172a;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    width: 450px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    overflow: hidden;
+    transform: perspective(1000px) rotateY(-10deg);
+}
+
+.mockup-header {
+    background: #1e293b;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dots { display: flex; gap: 6px; }
+.dots span { width: 8px; height: 8px; border-radius: 50%; background: #334155; }
+.dots .d1 { background: #ef4444; }
+
+.mockup-title { font-size: 12px; color: var(--text-muted); }
+
+.mockup-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.scan-radar {
+    width: 120px; height: 120px;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    position: relative;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+}
+
+.radar-line {
+    position: absolute;
+    top: 50%; left: 0;
+    width: 100%; height: 2px;
+    background: var(--primary);
+    animation: scan 2s infinite linear;
+}
+
+@keyframes scan { 0% { transform: translateY(-30px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateY(30px); opacity: 0; } }
+
+.file-list-preview {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.file-list-preview .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 11px;
+}
+
+.file-list-preview .status { color: #10b981; font-weight: 700; }
+.file-list-preview .size { color: var(--text-muted); }
+
 /* Footer */
 footer {
     text-align: center;
@@ -349,5 +414,6 @@ footer {
     .hero-content { max-width: 100%; }
     .cta-box { display: flex; flex-direction: column; align-items: center; }
     .feature-grid { grid-template-columns: 1fr; }
+    .mockup-frame { width: 100%; }
     .steps { flex-direction: column; }
 }
